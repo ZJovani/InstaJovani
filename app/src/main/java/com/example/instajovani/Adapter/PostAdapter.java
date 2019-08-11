@@ -1,6 +1,7 @@
 package com.example.instajovani.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.instajovani.CommentsActivity;
 import com.example.instajovani.Model.Post;
 import com.example.instajovani.Model.User;
 import com.example.instajovani.R;
@@ -61,6 +63,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
         publisherInfo(viewHolder.image_profile, viewHolder.username, viewHolder.publisher, post.getPublisher());
         isLiked(post.getPostid(), viewHolder.like);
         nrLikes(viewHolder.likes, post.getPostid());
+        getComments(post.getPostid(), viewHolder.comments);
 
         viewHolder.like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +77,27 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
                 }
             }
         });
+
+        viewHolder.comment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, CommentsActivity.class);
+                intent.putExtra("postid", post.getPostid());
+                intent.putExtra("publisherid", post.getPublisher());
+                mContext.startActivity(intent);
+            }
+        });
+
+        viewHolder.comments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, CommentsActivity.class);
+                intent.putExtra("postid", post.getPostid());
+                intent.putExtra("publisherid", post.getPublisher());
+                mContext.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -100,6 +124,22 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
             publisher = itemView.findViewById(R.id.publisher);
             description = itemView.findViewById(R.id.description);
         }
+    }
+
+    private void getComments(String postid, final TextView comments){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Comments").child(postid);
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                comments.setText("View All"+dataSnapshot.getChildrenCount() + "Comments");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void isLiked(String postid, final ImageView imageView){
