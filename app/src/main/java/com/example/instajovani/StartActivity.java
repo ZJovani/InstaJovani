@@ -23,7 +23,8 @@ public class StartActivity extends AppCompatActivity {
 
         //redirect if user is not null
         if(firebaseUser != null) {
-            startActivity(new Intent(StartActivity.this, MainActivity.class));
+            Intent intent=new Intent(StartActivity.this,MainActivity.class);
+            startActivity(intent);
             finish();
         }
     }

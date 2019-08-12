@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.instajovani.Fragment.HomeFragment;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         Bundle intent = getIntent().getExtras();
         if(intent!=null) {
             String publisher = intent.getString("publisherid");
+
+            Log.d("MAIN!!!!!!!!!!!", "onCreate: "+publisher);
 
             SharedPreferences.Editor editor = getSharedPreferences("PREFS", MODE_PRIVATE).edit();
             editor.putString("profileid", publisher);

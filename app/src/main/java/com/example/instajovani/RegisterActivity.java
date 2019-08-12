@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -46,6 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+
         txt_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,6 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String str_fullname = fullname.getText().toString();
                 String str_email = email.getText().toString();
                 String str_password = password.getText().toString();
+                Log.d("register", "onClick: "+str_username+"and"+str_fullname);
 
                 if(TextUtils.isEmpty(str_username) || TextUtils.isEmpty(str_fullname) ||
                         TextUtils.isEmpty(str_password) || TextUtils.isEmpty(str_email)){

@@ -3,14 +3,14 @@ package com.example.instajovani.Model;
 public class User {
 
     private String id;
-    private String usersname;
+    private String username;
     private String fullname;
     private String imageurl;
     private String bio;
 
-    public User(String id, String usersname, String fullname, String imageurl, String bio) {
+    public User(String id, String username, String fullname, String imageurl, String bio) {
         this.id = id;
-        this.usersname = usersname;
+        this.username = username;
         this.fullname = fullname;
         this.imageurl = imageurl;
         this.bio = bio;
@@ -28,11 +28,11 @@ public class User {
     }
 
     public String getUsername() {
-        return usersname;
+        return username;
     }
 
-    public void setUsersname(String usersname) {
-        this.usersname = usersname;
+    public void setUsersname(String username) {
+        this.username = username;
     }
 
     public String getFullname() {
