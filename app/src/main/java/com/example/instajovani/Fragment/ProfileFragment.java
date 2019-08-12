@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.instajovani.Adapter.MyFotosAdapter;
+import com.example.instajovani.EditProfileActivity;
 import com.example.instajovani.Model.Post;
 import com.example.instajovani.Model.User;
 import com.example.instajovani.R;
@@ -117,7 +118,7 @@ public class ProfileFragment extends Fragment {
 
                 if (btn.equals("Edit Profile")){
 
-                    //startActivity(new Intent(getContext(), EditProfileActivity.class));
+                    startActivity(new Intent(getContext(), EditProfileActivity.class));
 
                 } else if (btn.equals("follow")){
 
