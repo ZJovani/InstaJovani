@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.instajovani.Activities.OptionsActivity;
 import com.example.instajovani.Adapter.MyFotosAdapter;
 import com.example.instajovani.Activities.EditProfileActivity;
 import com.example.instajovani.Model.Post;
@@ -138,12 +139,12 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-//        options.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(getContext(), OptionsActivity.class));
-//            }
-//        });
+        options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), OptionsActivity.class));
+            }
+        });
 
         my_fotos.setOnClickListener(new View.OnClickListener() {
             @Override

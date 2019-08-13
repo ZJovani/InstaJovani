@@ -51,8 +51,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/bar"
         android:id="@+id/recycler_view"
-        >
+        />
 
-
-    </android.support.v7.widget.RecyclerView>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_circular"
+        android:layout_centerInParent="true"
+        />
 </RelativeLayout>
