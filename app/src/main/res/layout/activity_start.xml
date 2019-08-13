@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:padding="12dp"
     android:orientation="vertical"
-    tools:context=".StartActivity">
+    tools:context=".Activities.StartActivity">
 
     <ImageView
         android:layout_width="wrap_content"

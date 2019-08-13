@@ -1,4 +1,4 @@
-package com.example.instajovani;
+package com.example.instajovani.Activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +14,7 @@ import com.example.instajovani.Fragment.HomeFragment;
 import com.example.instajovani.Fragment.NotificationFragment;
 import com.example.instajovani.Fragment.ProfileFragment;
 import com.example.instajovani.Fragment.SearchFragment;
+import com.example.instajovani.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {

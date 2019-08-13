@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.instajovani.Fragment.ProfileFragment;
-import com.example.instajovani.MainActivity;
+import com.example.instajovani.Activities.MainActivity;
 import com.example.instajovani.Model.User;
 import com.example.instajovani.R;
 import com.google.firebase.auth.FirebaseAuth;

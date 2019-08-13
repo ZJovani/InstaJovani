@@ -1,4 +1,4 @@
-package com.example.instajovani;
+package com.example.instajovani.Activities;
 
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
@@ -11,13 +11,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.example.instajovani.Model.User;
+import com.example.instajovani.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;

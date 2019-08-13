@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.instajovani.Adapter.MyFotosAdapter;
-import com.example.instajovani.EditProfileActivity;
+import com.example.instajovani.Activities.EditProfileActivity;
 import com.example.instajovani.Model.Post;
 import com.example.instajovani.Model.User;
 import com.example.instajovani.R;

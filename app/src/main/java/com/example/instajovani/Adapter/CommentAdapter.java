@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.instajovani.MainActivity;
+import com.example.instajovani.Activities.MainActivity;
 import com.example.instajovani.Model.Comment;
 import com.example.instajovani.Model.User;
 import com.example.instajovani.R;

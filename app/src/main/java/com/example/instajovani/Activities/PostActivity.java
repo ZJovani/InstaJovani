@@ -1,11 +1,10 @@
-package com.example.instajovani;
+package com.example.instajovani.Activities;
 
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.instajovani.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -30,8 +30,6 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import java.util.HashMap;
 
 import com.google.firebase.storage.UploadTask;
-
-import java.util.HashMap;
 
 public class PostActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.instajovani;
+package com.example.instajovani.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.example.instajovani.Adapter.CommentAdapter;
 import com.example.instajovani.Model.Comment;
 import com.example.instajovani.Model.User;
+import com.example.instajovani.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
