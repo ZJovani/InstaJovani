@@ -29,7 +29,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
 
     private Context mContext;
     private List<Comment> mComment;
-
     private FirebaseUser firebaseUser;
 
     public CommentAdapter(Context mContext, List<Comment> mComment) {
@@ -52,13 +51,14 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
         final Comment comment = mComment.get(i);
 
         viewHolder.comment.setText(comment.getComment());
+        //get the user info of the comments
         getUserInfo(viewHolder.image_profile, viewHolder.username, comment.getPublisher());
 
         viewHolder.comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, MainActivity.class);
-                intent.putExtra("publisherid", comment.getPublisher());
+                intent.putExtra("publisherid", comment.getPublisher()); //pass publisher id
                 mContext.startActivity(intent);
             }
         });

@@ -47,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
-                    android:text="SAVE"
+                    android:text="Save Changes"
                     android:id="@+id/save"
                     android:textSize="16sp"
                     android:layout_centerVertical="true"

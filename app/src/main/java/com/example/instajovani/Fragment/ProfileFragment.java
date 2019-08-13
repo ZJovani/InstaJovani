@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.instajovani.Activities.OptionsActivity;
-import com.example.instajovani.Adapter.MyFotosAdapter;
+import com.example.instajovani.Adapter.MyPhotosAdapter;
 import com.example.instajovani.Activities.EditProfileActivity;
 import com.example.instajovani.Model.Post;
 import com.example.instajovani.Model.User;
@@ -49,11 +49,11 @@ public class ProfileFragment extends Fragment {
     String profileid;
 
     private RecyclerView recyclerView;
-    private MyFotosAdapter myFotosAdapter;
+    private MyPhotosAdapter myPhotosAdapter;
     private List<Post> postList;
 
     private RecyclerView recyclerView_saves;
-    private MyFotosAdapter myFotosAdapter_saves;
+    private MyPhotosAdapter myPhotosAdapter_saves;
     private List<Post> postList_saves;
 
     ImageButton my_fotos, saved_fotos;
@@ -85,16 +85,16 @@ public class ProfileFragment extends Fragment {
         LinearLayoutManager mLayoutManager = new GridLayoutManager(getContext(), 3);
         recyclerView.setLayoutManager(mLayoutManager);
         postList = new ArrayList<>();
-        myFotosAdapter = new MyFotosAdapter(getContext(), postList);
-        recyclerView.setAdapter(myFotosAdapter);
+        myPhotosAdapter = new MyPhotosAdapter(getContext(), postList);
+        recyclerView.setAdapter(myPhotosAdapter);
 
         recyclerView_saves = view.findViewById(R.id.recycler_view_save);
         recyclerView_saves.setHasFixedSize(true);
         LinearLayoutManager mLayoutManagers = new GridLayoutManager(getContext(), 3);
         recyclerView_saves.setLayoutManager(mLayoutManagers);
         postList_saves = new ArrayList<>();
-        myFotosAdapter_saves = new MyFotosAdapter(getContext(), postList_saves);
-        recyclerView_saves.setAdapter(myFotosAdapter_saves);
+        myPhotosAdapter_saves = new MyPhotosAdapter(getContext(), postList_saves);
+        recyclerView_saves.setAdapter(myPhotosAdapter_saves);
 
         recyclerView.setVisibility(View.VISIBLE);
         recyclerView_saves.setVisibility(View.GONE);
@@ -305,7 +305,7 @@ public class ProfileFragment extends Fragment {
                     }
                 }
                 Collections.reverse(postList);
-                myFotosAdapter.notifyDataSetChanged();
+                myPhotosAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -349,7 +349,7 @@ public class ProfileFragment extends Fragment {
                         }
                     }
                 }
-                myFotosAdapter_saves.notifyDataSetChanged();
+                myPhotosAdapter_saves.notifyDataSetChanged();
             }
 
             @Override

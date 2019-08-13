@@ -109,13 +109,13 @@ public class PostActivity extends AppCompatActivity {
 
                         String postid = reference.push().getKey();
 
-                        HashMap<String, Object> hashMap = new HashMap<>();
-                        hashMap.put("postid", postid);
-                        hashMap.put("postimage", miUrlOk);
-                        hashMap.put("description", description.getText().toString());
-                        hashMap.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
+                        HashMap<String, Object> hm = new HashMap<>();
+                        hm.put("postid", postid);
+                        hm.put("postimage", miUrlOk);
+                        hm.put("description", description.getText().toString());
+                        hm.put("publisher", FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-                        reference.child(postid).setValue(hashMap);
+                        reference.child(postid).setValue(hm);
 
                         pd.dismiss();
 

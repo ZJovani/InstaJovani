@@ -262,31 +262,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ImageViewHolde
         reference.push().setValue(hashMap);
     }
 
-//    private void deleteNotifications(final String postid, String userid){
-//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Notifications").child(userid);
-//        reference.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-//                    if (snapshot.child("postid").getValue().equals(postid)){
-//                        snapshot.getRef().removeValue()
-//                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-//                                    @Override
-//                                    public void onComplete(@NonNull Task<Void> task) {
-//                                        Toast.makeText(mContext, "Deleted!", Toast.LENGTH_SHORT).show();
-//                                    }
-//                                });
-//                    }
-//                }
-//            }
-
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-//    }
-
     private void nrLikes(final TextView likes, String postId){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Likes").child(postId);
         reference.addValueEventListener(new ValueEventListener() {
