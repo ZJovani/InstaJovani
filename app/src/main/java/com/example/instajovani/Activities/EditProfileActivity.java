@@ -42,9 +42,7 @@ public class EditProfileActivity extends AppCompatActivity {
     ImageView close, image_profile;
     TextView save, tv_change;
     MaterialEditText fullname, username, bio;
-
     FirebaseUser firebaseUser;
-
     private Uri mImageUri;
     private StorageTask uploadTask;
     StorageReference storageRef;
@@ -118,18 +116,19 @@ public class EditProfileActivity extends AppCompatActivity {
         });
     }
 
-    private  void updateProfile(String fullname, String username, String bio) {
+    private void updateProfile(String fullname, String username, String bio) {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users")
                 .child(firebaseUser.getUid());
 
-        HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("fullname", fullname);
-        hashMap.put("username", username);
-        hashMap.put("bio", bio);
+        HashMap<String, Object> hm = new HashMap<>();
+        hm.put("fullname", fullname);
+        hm.put("username", username);
+        hm.put("bio", bio);
 
-        reference.updateChildren(hashMap);
+        reference.updateChildren(hm);
     }
 
+    //obtaining the extension of a url
     private String getFileExtension(Uri uri){
         ContentResolver contentResolver = getContentResolver();
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();

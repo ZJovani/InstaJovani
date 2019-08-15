@@ -91,10 +91,11 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
             image_profile = itemView.findViewById(R.id.image_profile);
             username = itemView.findViewById(R.id.username);
             comment = itemView.findViewById(R.id.comment);
-
         }
     }
 
+
+    //gets the users comment info
     private void getUserInfo(final ImageView imageView, final TextView username, String publisherid){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Users").child(publisherid);
 

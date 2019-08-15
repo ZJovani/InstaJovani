@@ -35,14 +35,11 @@ public class CommentsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CommentAdapter commentAdapter;
     private List<Comment> commentList;
-
-    EditText addcomment;
+    EditText addcomment; //for users comments on posts
     ImageView image_profile;
     TextView post;
-
     String postid;
     String publisherid;
-
     FirebaseUser firebaseUser;
 
     @Override
@@ -74,7 +71,6 @@ public class CommentsActivity extends AppCompatActivity {
         post = findViewById(R.id.post);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
         Intent intent = getIntent();
         postid = intent.getStringExtra("postid");
         publisherid = intent.getStringExtra("publisherid");
@@ -101,23 +97,25 @@ public class CommentsActivity extends AppCompatActivity {
         hm.put("publisher", firebaseUser.getUid());
 
         reference.push().setValue(hm);
-        addNotification();
+        addCommentNotification();
         addcomment.setText("");
     }
 
-    private void addNotification(){
+    //adding to notification list on that post
+    private void addCommentNotification(){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Notifications").child(publisherid);
 
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("userid", firebaseUser.getUid());
-        hashMap.put("text", "commented: "+addcomment.getText().toString());
+        hashMap.put("text", "commented on your post");
         hashMap.put("postid", postid);
         hashMap.put("ispost", true);
 
         reference.push().setValue(hashMap);
     }
 
-    private void getImage(){ //getting the image profile of user who comments
+    //getting the image profile of user who comments
+    private void getImage(){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
 
         reference.addValueEventListener(new ValueEventListener() {
@@ -134,6 +132,7 @@ public class CommentsActivity extends AppCompatActivity {
         });
     }
 
+    //reading comments of post
     private void readComments() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Comments").child(postid);
 

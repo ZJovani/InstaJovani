@@ -65,11 +65,9 @@ public class PostActivity extends AppCompatActivity {
         post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                uploadImage_10();
+                uploadImage();
             }
         });
-
-
         CropImage.activity()
                 .setAspectRatio(1,1)
                 .start(PostActivity.this);
@@ -81,7 +79,9 @@ public class PostActivity extends AppCompatActivity {
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
-    private void uploadImage_10(){
+
+    //CHECK
+    private void uploadImage(){
         final ProgressDialog pd = new ProgressDialog(this);
         pd.setMessage("Posting");
         pd.show();
@@ -137,6 +137,8 @@ public class PostActivity extends AppCompatActivity {
             Toast.makeText(PostActivity.this, "No image selected", Toast.LENGTH_SHORT).show();
         }
     }
+
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
